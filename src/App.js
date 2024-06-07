@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { ApolloProvider, client } from "./apolloClient";
+import Games from "./components/games.js";
 
-function App() {
-  return (
+const App = () => (
+  <ApolloProvider client={client}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>GraphQL Client</h1>
+      <Games />
     </div>
-  );
-}
+  </ApolloProvider>
+);
 
 export default App;
